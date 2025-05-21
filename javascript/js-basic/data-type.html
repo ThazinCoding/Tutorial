@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Data type Example</title>
+</head>
+<body>
+    <h1>Javascript Data Type : String, Number, Boolean, Undefined, Null, Object, Array Example</h1>
+    <script>
+         let name ="Alice";
+         let greeting="Hello,world!";
+         let age=30;
+         let price=19.99;
+         let isLoggedIn =true;
+         let isAdmin =false;
+         let score;
+         console.log(score);
+         let selectedUser=null;
+         let user ={
+            name:"Alice",
+            age:25,
+            isMember:true,
+ };
+
+
+        /*Type Checking*/
+        console.log(typeof name);
+        console.log(typeof age);
+        console.log(typeof isLoggedIn);
+        console.log(typeof score);
+        console.log(typeof selectedUser);
+        console.log(typeof user);
+
+
+        //Array of number
+        let numbers = [1,2,3,4,5];
+        //Array of string
+        let fruits = ["apple","banana","cherry"];
+        //array of maixed data type
+        let mixed = [42,"hello",true,null,undefined,{name:"Alice"}];
+        //array with another array(nested array)
+        let martrix =[
+            [1,2],
+            [3,4],
+        ];
+        //Accessing Array Elements
+        console.log(fruits[0]);
+        console.log(mixed[5].name);
+        //Commom array methods
+        fruits.push("orange");
+        fruits.pop();
+        fruits.unshift("grape");
+        fruits.shift();
+        
+        console.log(fruits.length);
+        console.log(Array.isArray(fruits));
+        console.log(typeof fruits);
+
+    </script>
+</body>
+</html>
