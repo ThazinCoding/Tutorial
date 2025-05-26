@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript Loop Example</title>
+</head>
+<body>
+    <h1>Javascript Loop Example</h1>
+    <script>
+        //for loop
+        for(let i=0;i<5;i++){
+            console.log("for loop Number:",i);
+        }
+
+        //while loop
+        let count =0;
+        while (count <5 ){
+            console.log("While loop count:",count);
+            count++;
+        }
+
+        //do...while loop
+        let num=0;
+        do{
+            console.log("do...while loop Num;",num)
+            num++;
+        }while (num<5);
+
+        //break and continue
+        for(let i=0;i<10;i++){
+            if (i===4){
+                continue;//skip the rest of this loop 
+            }
+            if(i===8){
+                break; //Exit the loop entirely 
+            }
+            console.log("break and continue:",i);
+        }
+    </script>
+</body>
+</html>
