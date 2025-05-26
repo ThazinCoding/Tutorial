@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Array Object Example</title>
+</head>
+<body>
+    <h1>Javascript Array creation,methods,and loop Object literals, properties and methods Array of Object </h1>
+    <script>
+        let fruits = ["apple","banana","mango"];
+
+        fruits.push("orange");
+        fruits.pop();
+        fruits.unshift("grape");
+        fruits.shift();
+        fruits.includes("banana");
+        fruits.indexOf("manago");
+        fruits.splice(1,1);
+        console.log(fruits)
+        const joinedResult = fruits.join(",");
+        console.log('joined result:',joinedResult)
+
+        for (let i=0; i<fruits.length;i++){
+            console.log(fruits[i]);
+        }
+
+        for(let fruit of fruits){
+            console.log(fruit);
+        }
+
+        fruits.forEach(function(fruit){
+            console.log(fruit);
+        });
+
+        let person={
+            name:"Alice",
+            age:25,
+            greet:function(){
+                console.log("Hello,my name is"+this.name);
+            },
+        };
+
+        console.log(person.name);
+        console.log(person["age"]);
+        person.greet();
+
+
+        let users =[
+            {name: "Alice",age:25},
+            {name: "Bob",age:30},
+            {name: "Charlie",age:28},
+        ];
+
+        users.forEach((user)=>{
+            console.log(user.name+"is"+user.age +"years old.");
+        });
+
+        let colors=["red","greem","blue"];
+        let [first,second]=colors;
+
+        console.log(first);
+        console.log(second);
+        
+        let car={
+            brand:"Toyota",
+            model:"Corolla",
+            year:2022,
+        };
+
+        let{brand,model}=car;
+        console.log(brand);
+        console.log(model);
+
+
+
+    </script>
+</body>
+</html>
