@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width" initialscale="1.0" />
+    <title>Registration Form</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="form-container">
+        <form>
+            <h2>Course Registration</h2>
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullname" required>
+                <br />
+
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
+                <br />
+
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" required>
+                <br />
+
+                <label for="conpassword">Confirm Password</label>
+                <input type="text" name="conpassword" id="conpassword" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Demographics</legend>
+
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" id="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" id="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" id="gender" value="other"> Other</label>
+                </div>
+                <br />
+
+                <label>Interests</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="interests" id="interests" value="design"> Design</label>
+                    <label><input type="checkbox" name="interests" id="interests" value="coding"> Coding</label>
+                    <label><input type="checkbox" name="interests" id="interests" value="marketing"> Marketing</label>
+                </div>
+                <br />
+
+
+                <label for="country">Country</label>
+                <select name="country" id="country" required>
+                    <option value="">Select a country</option>
+                    <option value="malay">Malaysia</option>
+                    <option value="ch">China</option>
+                    <option value="sg">Singapore</option>
+                    <option value="cam">Cambodia</option>
+                    <option value="jp">japan</option>
+                </select>
+                <br /> <br />
+
+                <label for="bio">Short Bio</label>
+                <br />
+                <textarea name="bio" id="bio" rows="5"></textarea>
+
+            </fieldset>
+
+            <button type="submit">Register</button>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
