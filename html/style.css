@@ -9,16 +9,16 @@ body{
     margin:auto;
     background-color: #fff;
     padding: 25px;
-    border-radius :8px;
-    box-shadow: 0 0 10px rgba(0,0 , 0, 0.1);
+    border-radius :3px;
+    box-shadow: 0 0 10px rgba(0,0 , 0, );
 }
-form h3{
-    border:1px solid #ccc;
+form h2{
+    border:0 solid #ccc;
     margin-bottom: 20px;
 }
 fieldset{
-    border:8px solid #ccc;
-    padding:15px;
+    border:10px solid #ccc;
+    padding:10px;
     margin-bottom: 20px;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -54,7 +54,6 @@ lable{
  .checkbox-group lable{
     margin:0;
     display:flex;
-    align-items:center;
     gap:5px;
  }
  button[type="submit"]{
