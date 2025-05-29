@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Method in Class Example</title>
+</head>
+<body>
+    <h2>Method in Class Example</h2>
+    <script>
+    class Car{
+        constructor(brand,year){
+            this.brand=brand;
+            this.year=year;
+        }
+    
+    getInfo(){
+        return `Brand: ${this.brand}, Year: ${this.year}`;
+    }
+}
+ const car =new Car("Toyota",2022);
+console.log(car.getInfo());
+</script>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>JS Class's private Example</title>
+</head>
+<body>
+    <h1>JS Class's private Example</h1>
+    <script>
+        class Car {
+            #brand;
+            #year;
+            constructor (brand ,year){
+                this.#brand = brand;
+                this.#year = year;
+            }
+            getInfo(){
+                return `Brand : ${this.#brand},Year: ${this.#year}`;
+            }
+        
+            
+        }
+    </script>
+</body>
+</html>
