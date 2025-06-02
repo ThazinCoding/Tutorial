@@ -2,16 +2,16 @@
 
 import React from "react";
 
-export default class Person extends React.Component{
-    constructor(props){
+export default class Person extends React.Component {
+    constructor(props) {
         super(props);
-        this.state ={
-            name : "Mg Kyaw Min",
-            date : new Date(),
+        this.state = {
+            name: "Mg Kyaw Min",
+            date: new Date(),
         };
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <h1>State in Class Component</h1>
                 <div>{this.state.name}</div>
