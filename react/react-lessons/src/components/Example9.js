@@ -10,7 +10,7 @@ function Parent(){
     return(
         <div>
             <Greeting name ="Alice" age ={25}/>
-            <Greeting />                            //default Props
+            <Greeting />                            
         </div>
     );
 }

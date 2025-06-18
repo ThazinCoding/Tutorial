@@ -1,7 +1,7 @@
 "use client";
 import React,{useState} from "react";
 export default function Person(){
-    const[name,setName] =useState("mg mg");
+    const[name,setName] =useState();
     const[email,setEmail] =useState("mkm@gmail.com");
     const[phoneNo,setPhoneNo] =useState("09786533015");
 
@@ -10,7 +10,7 @@ export default function Person(){
     };
 
     const onChangePhoneNo =(event)=>{
-        console.log('onchangedPhoneNo',event)
+        //console.log('onchangedPhoneNo',event)
         setPhoneNo(event.target.value);
     };
 
