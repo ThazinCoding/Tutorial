@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import * as yup from "yup";
+import{prisma} from "@/lib/prisma";
 const BooksList = [
     {
         title: "The Pragmatic Programmer",
@@ -11,29 +12,29 @@ const BooksList = [
         author: "Toni Morrison",
         published_year: 1987,
     },
-    {
-        title: "The Road",
-        author: "Cormac McCarthy",
-        published_year: 2006,
-    },
+   
 ];
 export async function GET() {
-    return NextResponse.json(BooksList);
+    const book = await prisma.book.findMany();
+    return NextResponse.json(book);
 }
 
 const schema = yup.object().shape({
     title: yup.string().required("title is required"),
     author: yup.string().required("Author is required"),
-    published_year: yup.date().required("Published year is required"),
+    published_year: yup.number().required("Published year is required"),
 });
 
 export async function POST(req) {
     try {
         const body = await req.json();
-        await schema.validate(body, { abortEarly: false });
+        const validatedData= await schema.validate(body, { abortEarly: false });
+        const book =await prisma.book.create({
+            data: validatedData,
+        });
         return NextResponse.json({
             message: "Book is successfully created.",
-            bodyData: body,
+            book:book,
         });
     }
     catch (error) {
@@ -52,7 +53,7 @@ export async function POST(req) {
         }
         return NextResponse.json({
             message: "Unexpected Error",
-            error: error.message,
+            error: error.message || error,
         },
     { status: 500 }
         );

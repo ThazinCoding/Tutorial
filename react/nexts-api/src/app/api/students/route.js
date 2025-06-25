@@ -1,44 +1,55 @@
 import { NextResponse } from "next/server";
 import * as yup from "yup";
+import{prisma} from "@/lib/prisma";
+     //RESTful api
 const StudentData = [
     {
         id: 1,
         name: "Su Su",
         age: 17,
         address: "Hlaing",
-        major: "Computer Sicence",
+        major: "Computer Science",
     },
-    // {
-    //     id: 2,
-    //     name:"Min Min",
-    //     age: 17,
-    //     address: "Yan Kin",
-    //     major: "Computer Sicence",
-    // },
+    {
+        id: 2,
+        name:"Min Min",
+        age: 17,
+        address: "Yan Kin",
+        major: "Computer Science",
+    },
 
 ];
 //Get student list API
 export async function GET() {
-    return NextResponse.json(StudentData);
+    const students = await prisma.student.findMany();
+    return NextResponse.json(students);
 
 }
 //Validation schema to v
 const schema = yup.object().shape({
-    name: yup.string().required("Name is required"),
-    fatherName: yup.string().required("Father name is required"),
-    address: yup.string().required("Address is required"),
-    age: yup.number().required("Age is required"),
-    major: yup.string().required("Major is required"),
+   
+       name: yup.string().required("Name is required"),
+       father_name: yup.string().required("Father name is required"),
+       gender : yup.string().required("Gender is required").oneOf(["male","female"],'Invalid Gender'),
+       age: yup.number().required("Age is required"),
+       dob: yup.date().required("DOB is required"),
+       phone: yup.string().required("Phone is required"),
+       address: yup.string().required("Address is required"),
+       major: yup.string().required("Major is required"),
+   
 });
 
 
 export async function POST(req) {
     try {
         const body = await req.json();
-        await schema.validate(body, { abortEarly: false });
+        const validatedData =await schema.validate(body, { abortEarly: false });
+        const student = await prisma.student.create({
+            data: validatedData,
+        });
         return NextResponse.json({
             message: "Student is successfully created.",
-            bodyData: body,
+            student:student,
         });
     }
     catch (error) {
